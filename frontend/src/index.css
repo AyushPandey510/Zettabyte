@@ -1,0 +1,69 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ghibli-inspired design system with warm, natural colors */
+
+@layer base {
+  :root {
+    --background: 252 249 246;
+    --foreground: 41 37 36;
+
+    --card: 255 253 251;
+    --card-foreground: 41 37 36;
+
+    --popover: 255 253 251;
+    --popover-foreground: 41 37 36;
+
+    --primary: 58 181 128;
+    --primary-foreground: 255 255 255;
+
+    --secondary: 250 236 212;
+    --secondary-foreground: 120 113 108;
+
+    --muted: 245 245 244;
+    --muted-foreground: 120 113 108;
+
+    --accent: 254 240 235;
+    --accent-foreground: 194 65 12;
+
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+
+    --border: 231 229 228;
+    --input: 231 229 228;
+    --ring: 58 181 128;
+
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-ghibli;
+    background: linear-gradient(135deg, #fcf9f6 0%, #faf7f2 100%);
+    min-height: 100vh;
+  }
+}
+
+/* Custom Ghibli-style components */
+@layer components {
+  .ghibli-card {
+    @apply bg-white rounded-ghibli shadow-lg border border-stone-200 hover:shadow-xl transition-all duration-300;
+    background: linear-gradient(145deg, #ffffff 0%, #fefcfa 100%);
+  }
+
+  .ghibli-button {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1;
+  }
+
+  .ghibli-input {
+    @apply w-full px-4 py-3 rounded-2xl border-2 border-stone-200 focus:border-forest-green-400 focus:outline-none transition-colors duration-300 bg-white;
+  }
+}
